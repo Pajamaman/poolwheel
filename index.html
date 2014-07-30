@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Pool of Radiance Code Wheel</title>
+        <style>
+            #container {
+                width: 822px;
+                height: 822px;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
+            }
+            #inner {
+                background: url(img/inner.png) center center no-repeat;
+                width: 822px;
+                height: 822px;
+                position: absolute;
+                z-index: 1;
+            }
+            #outer {
+                background: url(img/outer.png) center center no-repeat;
+                width: 822px;
+                height: 822px;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="inner" style="transform: rotate(-94deg);"></div>
+            <div id="outer" style="transform: rotate(142deg);"></div>
+        </div>
+        <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/jquery.rotate.js"></script>
+        <script>
+            $(function () {
+                $('#container').click(function () {
+                    var outer = $('#outer'),
+                        rotation = parseInt(outer.css('rotate'));
+                    
+                    outer.animate({'rotate': rotation + 10});
+                });
+            });
+        </script>
+    </body>
+</html>
